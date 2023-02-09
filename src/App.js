@@ -4,6 +4,9 @@ import FoodBox from "./components/foodBox";
 import { Row, Divider, Button } from 'antd';
 import AddFoodForm from "./components/addFoodForm";
 import Search from "./components/search";
+import {Routes, Route} from "react-router-dom";
+import { ShowButton } from "./components/hideSeekFormButtons/hideShowButton";
+
 
 function App() {
   const [ foodList, setFoodList ] = useState(foods)
@@ -19,8 +22,10 @@ function App() {
   };
   return (
     <div>
-      <AddFoodForm addFood={addFood} />
-      <Button> Hide Form / Add New Food </Button>
+      <Routes>
+        <Route path="/" element={<ShowButton />}/>
+        <Route path="/addFoodForm" element={<AddFoodForm addFood={addFood} />} />
+      </Routes>
 
       <Search filterFood={filterFood} />
       <Divider>Food List</Divider>

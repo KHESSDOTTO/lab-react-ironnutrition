@@ -1,5 +1,6 @@
 import { Divider, Input } from 'antd';
 import { useState } from 'react';
+import { HideButton } from '../hideSeekFormButtons/hideShowButton';
 
 
 function AddFoodForm(props) {
@@ -23,6 +24,9 @@ function AddFoodForm(props) {
       <label htmlFor='servings'>Servings</label>
       <Input value={form.servings} type="number" onChange={handleChange} name="servings" id="servings" />
       <button type="submit">Create</button>
+      <br />
+      <br />
+      <HideButton />
     </form>
   );
 }
